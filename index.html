@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller BAM</title>
+    <style>
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <div class="container-fluid">
+            <table>
+                <tr>
+                    <td>
+                        <div class="circle" onmouseover="showInfo('Robin', 'imagen1.jpg')">Robin</div>
+                    </td>
+                    <td>
+                        <div class="circle" onmouseover="showInfo('Rebe', 'imagen2.jpg')">Rebe</div>
+                    </td>
+                    <td>
+                        <div class="circle" onmouseover="showInfo('Steven', 'imagen3.jpg')">Steven</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="container-fluid">
+            <div id="info" style="display: none;">
+                <img id="info-image" src="" alt="Profile Image" style="max-width: 500px; max-height: 500px;">
+                <p id="info-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log('Hello World');
+
+
+        function showInfo(name, image) {
+            const infoDiv = document.getElementById('info');
+            const infoImage = document.getElementById('info-image');
+            const infoText = document.getElementById('info-text');
+
+            infoImage.src = image;
+            infoText.textContent = `Name: ${name}`;
+
+            infoDiv.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
